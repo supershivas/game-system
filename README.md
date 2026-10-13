@@ -26,6 +26,8 @@ On y trouve :
    un jeu de départ jouable, le labo et l'atelier, les agents, commandes et
    skills Claude Code, le workflow GitHub Pages.
 5. **La mémoire** :
+   - `MES-INSPIRATIONS.md` : mes inspirations à moi, en trois étages (un
+     noyau de 12 entrées au plus, des fils repliés, une réserve) ;
    - `INSPIRATION.md` : jeux, périodes historiques, personnages, œuvres
      d'art (peinture, estampe, BD, cinéma, littérature, musique) et
      contraintes de style où puiser, avec ce qu'on peut prendre de chacun ;
@@ -41,6 +43,7 @@ On y trouve :
 ```
 index.html  site/         la page d'accueil (GitHub Pages, racine de main)
 INSPIRATION.md          où puiser : jeux, périodes, personnages, œuvres
+MES-INSPIRATIONS.md     mes inspirations : noyau, fils, réserve
 CONVENTIONS.md          les règles des jeux (copiées dans chaque jeu)
 DESIGN-SYSTEM.md        le design system des jeux — à définir
 GENRES.md               genres, vues, rendus, publics, formes de session

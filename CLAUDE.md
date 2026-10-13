@@ -12,6 +12,7 @@ rien importer de ce dépôt-là, ne pas y renvoyer.
 | `DESIGN-SYSTEM.md` | design system des jeux, **à définir** | non |
 | `index.html`, `site/` | page d'accueil (GitHub Pages) : formulaire du prompt, inspiration, lecteur des fichiers | non |
 | `INSPIRATION.md` | jeux, périodes, personnages, œuvres où puiser | non (lu par la page et par le prompt) |
+| `MES-INSPIRATIONS.md` | les inspirations personnelles de Jérôme : noyau (12 au plus), fils (10 au plus), réserve | non (lu par la page ; le prompt n'en lit que le noyau) |
 | `GENRES.md` | catalogue genres / vues / rendus / publics | non (lu par le prompt de démarrage) |
 | `LECONS.md` | pièges rencontrés dans les jeux | non (lu au besoin) |
 | `profils/` | une fiche par famille de rendu | non (lue au démarrage) |
@@ -60,6 +61,12 @@ rien importer de ce dépôt-là, ne pas y renvoyer.
     le nom en première colonne des tableaux ;
   - `INSPIRATION.md` : `## section`, `### sous-section`, et des entrées
     `- **Nom** (repère) — ce qu'on peut en prendre.`
+  - `MES-INSPIRATIONS.md` : même format d'entrée, sous `## Le noyau`,
+    `## Les fils` (un `### fil` par thème) et `## La réserve`. Ses
+    plafonds sont la règle du fichier : 12 entrées au noyau, 10 fils ; pour
+    en ajouter, proposer à Jérôme ce qui sort ou passe en réserve. Il ne
+    contient que des noms et « ce que j'en prends », jamais de paroles de
+    chanson ni de passages de ses textes (le dépôt est public).
   Après un changement de l'un d'eux, ou d'une question du prompt (les
   décisions du formulaire sont dans `site/accueil.js`, `decisionsDe`), ouvrir
   la page en local (`node outils/captures.mjs`) et relire le prompt généré.

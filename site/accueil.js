@@ -2,7 +2,7 @@
 // piocher dans l'inspiration, lire les fichiers du dépôt.
 //
 // Une seule source de vérité : la page LIT les fichiers du dépôt
-// (templates/PROMPT-NOUVEAU-JEU.md, GENRES.md, INSPIRATION.md) au lieu d'en
+// (templates/PROMPT-NOUVEAU-JEU.md, GENRES.md, INSPIRATION.md, MES-INSPIRATIONS.md) au lieu d'en
 // recopier le contenu. Changer ces fichiers change la page.
 // Si un fichier manque sur le site (GitHub Pages et les dossiers « . »), il
 // est lu sur raw.githubusercontent.com.
@@ -29,7 +29,7 @@ const SKILLS = ['equilibrage', 'nouvelle-regle', 'livrer', 'journal', 'variante-
 const MODULES = ['app-update.js', 'keys.js', 'pointer.js', 'gamepad.js', 'loop.js', 'pixel-canvas.js', 'rng.js', 'save.js', 'debug.js', 'sprites.js', 'audio.js', 'i18n.js', 'game.css', 'labo-shell.js', 'labo-shell.css', 'pixel-editor.js', 'gh-publish.js'];
 const OUTILS = ['test-run.mjs', 'captures.mjs', 'audit-ecran.mjs', 'lisibilite.mjs', 'stamp-version.mjs', 'icones.mjs', 'navigateur.mjs', 'playtest/run.mjs'];
 const DOCS = [
-  ['Démarrer', ['README.md', 'templates/PROMPT-NOUVEAU-JEU.md', 'INSPIRATION.md', 'GENRES.md']],
+  ['Démarrer', ['README.md', 'templates/PROMPT-NOUVEAU-JEU.md', 'MES-INSPIRATIONS.md', 'INSPIRATION.md', 'GENRES.md']],
   ['Règles', ['CONVENTIONS.md', 'DESIGN-SYSTEM.md', 'LECONS.md', 'CLAUDE.md']],
   ['Profils de rendu', ['profils/pixel-2d-canvas.md', 'profils/pixel-2d-phaser.md', 'profils/pixel-3d-three.md', 'profils/dom-cartes.md', 'profils/vectoriel.md']],
   ['Modèles', ['templates/CLAUDE.jeu.md', 'templates/DESIGN.md', 'templates/ROADMAP.md', 'templates/installer.sh', 'templates/sync-game-system.sh', 'templates/pages.yml']],
@@ -178,17 +178,22 @@ function parseGenres(md) {
     sessions: colonne1(lignes(parTitre('5.'))),
   };
 }
-function parseInspiration(md) {
+// perso : MES-INSPIRATIONS.md (étages : noyau, fil, réserve) ; sinon INSPIRATION.md
+function parseInspiration(md, perso = false) {
   const items = [];
+  const net = t => (t || '').replace(/\*/g, '');
   let section = '', sous = '';
   for (const l of md.split('\n')) {
     if (l.startsWith('## ')) { section = l.slice(3).trim(); sous = ''; continue; }
     if (l.startsWith('### ')) { sous = l.slice(4).trim(); continue; }
     const m = l.match(/^- \*\*(.+?)\*\*\s*(?:\(([^)]*)\))?\s*(?:—\s*(.*))?$/);
-    if (m && section && !section.startsWith('Comment')) items.push({ section, sous, nom: m[1], repere: m[2] || '', desc: m[3] || '' });
+    if (!m || !section || section.startsWith('Comment')) continue;
+    const etage = !perso ? 'general' : section.startsWith('Le noyau') ? 'noyau' : section.startsWith('La réserve') ? 'reserve' : 'fil';
+    items.push({ perso, etage, section, sous, nom: m[1], repere: net(m[2]), desc: net(m[3]) });
   }
   return items;
 }
+const MAX_INSPI = 6;
 
 // ─── L'état du formulaire (gardé dans ce navigateur) ──────────────────────
 const vide = () => ({ nom: '', repo: '', pitch: '', references: '', inspirations: [], decisions: {}, precisions: {}, lot: '', critere: '', refus: '' });
@@ -300,10 +305,11 @@ function etiquettesChoisies() {
   const zone = $('inspirations-choisies');
   zone.replaceChildren(...etat.inspirations.map(n => el('button', { type: 'button', class: 'etiquette choisie', title: 'Retirer',
     onclick: () => basculerInspiration(n) }, n, el('span', { class: 'x', 'aria-hidden': 'true' }, '×'))));
-  if (!etat.inspirations.length) zone.append(el('small', { class: 'aide-champ' }, 'Aucune pour l\'instant.'));
+  zone.append(el('small', { class: 'aide-champ' }, etat.inspirations.length ? `${etat.inspirations.length} / ${MAX_INSPI}` : `Aucune pour l'instant (${MAX_INSPI} au plus).`));
 }
 function basculerInspiration(nom) {
   const s = new Set(etat.inspirations);
+  if (!s.has(nom) && s.size >= MAX_INSPI) { toast(`${MAX_INSPI} inspirations au plus : retires-en une d'abord`); return; }
   s.has(nom) ? s.delete(nom) : s.add(nom);
   etat.inspirations = [...s];
   maj();
@@ -325,9 +331,10 @@ function generer() {
   if (etat.inspirations.length) {
     const details = etat.inspirations.map(n => {
       const it = INSPI.find(x => x.nom === n);
-      return it ? `- **${n}**${it.repere ? ` (${it.repere})` : ''} — ${it.desc}` : `- **${n}**`;
+      if (!it) return `- **${n}**`;
+      return `- **${n}**${it.repere ? ` (${it.repere})` : ''} — ${it.desc}${it.perso ? ' *(à moi)*' : ''}`;
     });
-    ajouts.push(`Inspirations (tirées de \`INSPIRATION.md\` de game-system ; on prend l'air, on invente les noms) :\n${details.join('\n')}`);
+    ajouts.push(`Inspirations (game-system : \`MES-INSPIRATIONS.md\` pour celles marquées « à moi », \`INSPIRATION.md\` pour les autres ; on prend l'air, on invente les noms) :\n${details.join('\n')}`);
   }
   const decisions = [];
   for (const [, liste] of SECTIONS) {
@@ -378,44 +385,78 @@ $('telecharger').onclick = () => {
 };
 
 // ─── L'inspiration ────────────────────────────────────────────────────────
+const ouverts = new Set();   // les blocs dépliés, gardés d'un rendu à l'autre
 function rendreInspiration() {
   const zone = $('inspiration');
   if (!INSPI.length) return;
-  const f = $('filtre').value.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-  const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const norm = s => s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const f = norm($('filtre').value.trim());
   const choisis = new Set(etat.inspirations);
-  const visibles = INSPI.filter(it => !f || norm(`${it.nom} ${it.repere} ${it.desc} ${it.section} ${it.sous}`).includes(f));
-  const parSection = new Map();
-  for (const it of visibles) {
-    if (!parSection.has(it.section)) parSection.set(it.section, new Map());
-    const m = parSection.get(it.section);
-    if (!m.has(it.sous)) m.set(it.sous, []);
-    m.get(it.sous).push(it);
+  const correspond = it => !f || norm(`${it.nom} ${it.repere} ${it.desc} ${it.section} ${it.sous}`).includes(f);
+  const carte = it => el('button', {
+    type: 'button', class: `item-inspi${choisis.has(it.nom) ? ' choisie' : ''}`, 'aria-pressed': String(choisis.has(it.nom)),
+    onclick: () => basculerInspiration(it.nom),
+  }, el('b', {}, it.nom, it.repere ? el('span', { class: 'repere' }, ` (${it.repere})`) : null), el('span', { class: 'desc' }, it.desc));
+  const liste = items => el('div', { class: 'liste-inspi' }, items.map(carte));
+  // Un bloc replié : ouvert s'il l'était, ou dès qu'on filtre
+  const repli = (cle, titre, items, contenu) => {
+    const d = el('details', { class: 'repli', open: !!f || ouverts.has(cle) },
+      el('summary', {}, titre, el('span', { class: 'nb' }, String(items.length))), contenu);
+    d.addEventListener('toggle', () => { if (!f) d.open ? ouverts.add(cle) : ouverts.delete(cle); });
+    return d;
+  };
+  const grouper = (items, cle) => {
+    const m = new Map();
+    for (const it of items) { const k = it[cle]; if (!m.has(k)) m.set(k, []); m.get(k).push(it); }
+    return m;
+  };
+
+  const blocs = [];
+  // 1. Mes inspirations : le noyau visible, les fils repliés, la réserve seulement au filtre
+  const perso = INSPI.filter(it => it.perso && correspond(it));
+  const noyau = perso.filter(it => it.etage === 'noyau');
+  const fils = grouper(perso.filter(it => it.etage === 'fil'), 'sous');
+  const reserve = perso.filter(it => it.etage === 'reserve');
+  if (noyau.length || fils.size || (f && reserve.length)) {
+    blocs.push(el('section', { class: 'section-inspi' },
+      el('h2', {}, 'Mes inspirations'),
+      noyau.length ? el('div', { class: 'carte-inspi' }, el('h3', {}, 'Le noyau'), liste(noyau)) : null,
+      fils.size ? el('h3', {}, 'Les fils') : null,
+      ...[...fils].map(([fil, items]) => repli(`fil:${fil}`, fil, items, liste(items))),
+      f && reserve.length ? repli('reserve', 'La réserve', reserve, liste(reserve)) : null));
   }
-  zone.replaceChildren(...[...parSection].map(([section, sous]) => el('section', { class: 'section-inspi' },
-    el('h2', {}, section),
-    ...[...sous].map(([titre, items]) => el('div', { class: 'carte-inspi' },
-      titre ? el('h3', {}, titre) : null,
-      el('div', { class: 'liste-inspi' }, items.map(it => el('button', {
-        type: 'button', class: `item-inspi${choisis.has(it.nom) ? ' choisie' : ''}`, 'aria-pressed': String(choisis.has(it.nom)),
-        onclick: () => basculerInspiration(it.nom),
-      }, el('b', {}, it.nom, it.repere ? el('span', { class: 'repere' }, ` (${it.repere})`) : null), el('span', { class: 'desc' }, it.desc)))))))));
-  if (!visibles.length) zone.append(el('p', { class: 'note' }, 'Rien ne correspond.'));
+  // 2. La culture générale : une section repliée par thème
+  const general = grouper(INSPI.filter(it => !it.perso && correspond(it)), 'section');
+  if (general.size) {
+    blocs.push(el('section', { class: 'section-inspi' },
+      el('h2', {}, 'Culture générale'),
+      ...[...general].map(([section, items]) => repli(`gen:${section}`, section, items,
+        [...grouper(items, 'sous')].map(([sous, its]) => el('div', { class: 'carte-inspi' }, sous ? el('h3', {}, sous) : null, liste(its)))))));
+  }
+  zone.replaceChildren(...blocs);
+  if (!blocs.length) zone.append(el('p', { class: 'note' }, 'Rien ne correspond.'));
 }
 
 // Un tirage : une période, une œuvre, un jeu, un personnage (le hasard du
 // navigateur est permis ici : ce n'est pas un jeu)
 function tirer() {
-  const pioche = prefixe => { const l = INSPI.filter(i => i.section.startsWith(prefixe)); return l[Math.floor(Math.random() * l.length)]; };
-  const tirage = [['Période ou lieu', pioche('Périodes')], ["L'image", pioche('Œuvres')], ['La mécanique', pioche('Jeux')], ['Le personnage', pioche('Personnages')]].filter(([, i]) => i);
+  const au_hasard = l => l[Math.floor(Math.random() * l.length)];
+  const pioche = prefixe => au_hasard(INSPI.filter(i => !i.perso && i.section.startsWith(prefixe)));
+  const tirage = [
+    ['De moi', au_hasard(INSPI.filter(i => i.perso && i.etage !== 'reserve'))],
+    ['Période ou lieu', pioche('Périodes')], ["L'image", pioche('Œuvres')], ['La mécanique', pioche('Jeux')],
+  ].filter(([, i]) => i);
   const zone = $('tirage');
   zone.hidden = false;
   zone.replaceChildren(
     el('ol', {}, tirage.map(([role, it]) => el('li', {}, el('strong', {}, `${role} : `), `${it.nom}${it.repere ? ` (${it.repere})` : ''} — ${it.desc}`))),
     el('div', { class: 'actions' },
       el('button', { type: 'button', class: 'bouton', onclick: () => {
-        const s = new Set(etat.inspirations); tirage.forEach(([, it]) => s.add(it.nom));
-        etat.inspirations = [...s]; maj(); rendreInspiration(); toast('Ajoutées au prompt');
+        const s = new Set(etat.inspirations);
+        let refusees = 0;
+        tirage.forEach(([, it]) => { if (s.has(it.nom)) return; if (s.size < MAX_INSPI) s.add(it.nom); else refusees++; });
+        etat.inspirations = [...s]; maj(); rendreInspiration();
+        toast(refusees ? `Ajoutées, sauf ${refusees} : ${MAX_INSPI} au plus` : 'Ajoutées au prompt');
       } }, 'Ajouter au prompt'),
       el('button', { type: 'button', class: 'bouton secondaire', onclick: tirer }, 'Relancer')),
   );
@@ -474,10 +515,12 @@ lierChamps();
 etiquettesChoisies();
 route();
 try {
-  const [modele, genres, inspiration] = await Promise.all([lire('templates/PROMPT-NOUVEAU-JEU.md'), lire('GENRES.md'), lire('INSPIRATION.md')]);
+  const [modele, genres, inspiration, mesInspirations] = await Promise.all([
+    lire('templates/PROMPT-NOUVEAU-JEU.md'), lire('GENRES.md'), lire('INSPIRATION.md'), lire('MES-INSPIRATIONS.md').catch(() => ''),
+  ]);
   MODELE = modele;
   SECTIONS = decisionsDe(parseGenres(genres));
-  INSPI = parseInspiration(inspiration);
+  INSPI = [...parseInspiration(mesInspirations, true), ...parseInspiration(inspiration)];
   construireDecisions();
   rendreInspiration();
   maj();

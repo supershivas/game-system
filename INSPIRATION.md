@@ -32,7 +32,7 @@ Format d'une entrée (la page d'accueil en dépend) :
 - **Journey** (thatgamecompany, 2012) — un seul verbe (avancer), un autre joueur sans parole, le sable comme matière et comme musique.
 - **Proteus** (Ed Key, 2013) — une île qui sonne quand on la parcourt, saisons en accéléré, aucun but.
 - **Kentucky Route Zero** (Cardboard Computer) — réalisme magique, théâtre, lumière de scène, dialogues comme poésie.
-- **Inside** et **Limbo** (Playdead) — silhouette, aucun mot, chaque écran est une énigme et une image.
+- **Inside et Limbo** (Playdead) — silhouette, aucun mot, chaque écran est une énigme et une image.
 - **Gris** (Nomada) — la couleur qui revient au fil du deuil, aquarelle, plateforme sans mort.
 - **Alto's Odyssey** (Snowman) — un geste, des paysages qui défilent, le jour et la nuit, sur téléphone.
 - **Sword & Sworcery** (Capy, 2011) — pixel art très grand et très peu de pixels, musique de Jim Guthrie, mélancolie et humour.
@@ -310,8 +310,8 @@ Format d'une entrée (la page d'accueil en dépend) :
 
 - **Erik Satie** (*Gymnopédies*) — peu de notes, beaucoup d'espace.
 - **Joe Hisaishi** — thèmes simples qui deviennent immenses (Ghibli).
-- **Sigur Rós** et **Jóhann Jóhannsson** — nappes nordiques, voix lointaines, glace.
-- **Philip Glass** et **Steve Reich** — motifs répétés qui changent lentement (musique de boucle).
+- **Sigur Rós et Jóhann Jóhannsson** — nappes nordiques, voix lointaines, glace.
+- **Philip Glass et Steve Reich** — motifs répétés qui changent lentement (musique de boucle).
 - **Brian Eno** (*Music for Airports*) — la musique comme décor, générative.
 - **La chiptune** (NES, Game Boy, SID) — quatre voies, la contrainte comme timbre.
 - **Les field recordings** — vent, pas dans la neige, ville lointaine : le son du lieu.

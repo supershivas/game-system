@@ -194,3 +194,12 @@ input:focus-visible, textarea:focus-visible, select:focus-visible, .bouton:focus
   .onglets a { padding: 0 7px; font-size: 14px; }
   .vue { padding: 12px; }
 }
+
+/* Blocs repliés de l'inspiration (fils, sections de culture générale) */
+.repli { border: 1px solid var(--trait); border-radius: var(--rayon); background: var(--carte); margin: 6px 0; }
+.repli > summary { display: flex; align-items: center; gap: 8px; min-height: var(--cible); padding: 0 14px; cursor: pointer; font-weight: 600; list-style: none; }
+.repli > summary::-webkit-details-marker { display: none; }
+.repli > summary::before { content: '▸'; color: var(--doux); transition: transform .15s; }
+.repli[open] > summary::before { transform: rotate(90deg); }
+.repli .nb { margin-left: auto; font-weight: 400; font-size: 13px; color: var(--doux); }
+.repli > .liste-inspi, .repli > .carte-inspi { padding: 0 10px 10px; }
