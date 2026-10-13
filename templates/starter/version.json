@@ -1,0 +1,5 @@
+{
+  "version": "0.1.0",
+  "date": "{{DATE}}",
+  "changes": ["Premier lancement : écran titre, réglages, sauvegarde"]
+}
