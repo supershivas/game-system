@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1c1e">
+<title>game-system</title>
+<link rel="icon" href="site/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="site/accueil.css">
+</head>
+<body>
+<header class="tete">
+  <a class="marque" href="#nouveau" aria-label="game-system"><span class="logo" aria-hidden="true"></span><span class="marque-nom">game-system</span></a>
+  <nav class="onglets" aria-label="Sections">
+    <a href="#nouveau" data-vue="nouveau">Nouveau jeu</a>
+    <a href="#inspiration" data-vue="inspiration">Inspiration</a>
+    <a href="#doc/README.md" data-vue="doc">Documents</a>
+  </nav>
+  <a class="icone" href="https://github.com/supershivas/game-system" aria-label="Le dépôt sur GitHub" title="Le dépôt sur GitHub">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+  </a>
+</header>
+
+<!-- ─── Nouveau jeu : le formulaire qui écrit le prompt ─────────────────── -->
+<main class="vue" id="vue-nouveau" hidden>
+  <div class="colonnes">
+    <form class="formulaire" id="formulaire" autocomplete="off">
+      <section class="bloc">
+        <h2>Le jeu</h2>
+        <label class="champ"><span>Nom du jeu <span class="requis">obligatoire</span></span>
+          <input name="nom" required placeholder="Kingvi SNO 7">
+        </label>
+        <label class="champ">Repo GitHub
+          <span class="prefixe"><span>supershivas/</span><input name="repo" id="repo" placeholder="nom-du-jeu" pattern="[A-Za-z0-9._-]+"></span>
+          <small>Déduit du nom si vide.</small>
+        </label>
+        <label class="champ"><span>Le pitch <span class="requis">obligatoire</span></span>
+          <textarea name="pitch" rows="4" required placeholder="Ce qu'on fait, ce qu'on ressent, pour qui. Deux ou trois phrases."></textarea>
+        </label>
+        <label class="champ">Références et inspirations
+          <textarea name="references" rows="2" placeholder="« un Zelda contemplatif », une couleur, un souvenir…"></textarea>
+        </label>
+        <div class="champ">
+          <span>Inspirations choisies</span>
+          <div class="etiquettes" id="inspirations-choisies"></div>
+          <div class="actions">
+            <a class="bouton secondaire" href="#inspiration">Piocher dans l'inspiration</a>
+            <button type="button" class="bouton secondaire" id="tirage-rapide">Tirer au sort</button>
+          </div>
+        </div>
+      </section>
+
+      <p class="note">Chaque décision est facultative : laissée sur « À me demander », Claude Code
+        la pose en question à choix multiples au début de la session.</p>
+      <div id="decisions"></div>
+
+      <section class="bloc">
+        <h2>Le lot minimal</h2>
+        <label class="champ">Ce qui doit exister en premier
+          <textarea name="lot" rows="3" placeholder="Une brique par ligne. Vide : Claude Code propose."></textarea>
+        </label>
+        <label class="champ">Critère de validation
+          <input name="critere" placeholder="« une partie dure 5 à 8 minutes », « 200 objets à 60 images/s »…">
+        </label>
+        <label class="champ">Ce que le jeu refuse
+          <textarea name="refus" rows="3" placeholder="Une ligne par refus : pas de tutoriel bavard, aucune urgence…"></textarea>
+        </label>
+      </section>
+      <div class="actions-form">
+        <button type="button" class="bouton secondaire" id="effacer">Tout effacer</button>
+      </div>
+    </form>
+
+    <aside class="sortie" aria-label="Le prompt">
+      <div class="sortie-tete">
+        <h2>Le prompt</h2>
+        <span class="compte" id="compte"></span>
+      </div>
+      <p class="manque" id="manque"></p>
+      <textarea id="prompt" readonly rows="18" aria-label="Prompt généré"></textarea>
+      <div class="actions">
+        <button type="button" class="bouton" id="copier">Copier</button>
+        <button type="button" class="bouton secondaire" id="telecharger">Télécharger .md</button>
+      </div>
+      <p class="aide">À coller au début de la première session Claude Code, dans le repo du
+        nouveau jeu (créé vide sur GitHub). Le formulaire est gardé dans ce navigateur.</p>
+    </aside>
+  </div>
+</main>
+
+<!-- ─── Inspiration ─────────────────────────────────────────────────────── -->
+<main class="vue" id="vue-inspiration" hidden>
+  <div class="inspi-tete">
+    <input type="search" id="filtre" placeholder="Filtrer : neige, Japon, silhouette…" aria-label="Filtrer l'inspiration">
+    <button type="button" class="bouton" id="tirer">Tirer au sort</button>
+  </div>
+  <div class="tirage" id="tirage" hidden></div>
+  <p class="note">Toucher une étiquette l'ajoute au prompt (onglet Nouveau jeu) ; la toucher à
+    nouveau l'en retire. Source : <a href="#doc/INSPIRATION.md">INSPIRATION.md</a>.</p>
+  <div id="inspiration"></div>
+</main>
+
+<!-- ─── Documents ───────────────────────────────────────────────────────── -->
+<main class="vue" id="vue-doc" hidden>
+  <div class="docs">
+    <nav class="docs-liste" id="docs-liste" aria-label="Fichiers"></nav>
+    <select class="docs-choix" id="docs-choix" aria-label="Fichier"></select>
+    <article class="doc" id="doc"></article>
+  </div>
+</main>
+
+<div class="toast" id="toast" role="status" hidden></div>
+<script type="module" src="site/accueil.js"></script>
+</body>
+</html>

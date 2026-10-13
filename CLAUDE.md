@@ -10,6 +10,8 @@ rien importer de ce dépôt-là, ne pas y renvoyer.
 |--------|------|---------------------|
 | `CONVENTIONS.md` | règles communes aux jeux | oui → `.claude/conventions-jeu.md` (à chaque session) |
 | `DESIGN-SYSTEM.md` | design system des jeux, **à définir** | non |
+| `index.html`, `site/` | page d'accueil (GitHub Pages) : formulaire du prompt, inspiration, lecteur des fichiers | non |
+| `INSPIRATION.md` | jeux, périodes, personnages, œuvres où puiser | non (lu par la page et par le prompt) |
 | `GENRES.md` | catalogue genres / vues / rendus / publics | non (lu par le prompt de démarrage) |
 | `LECONS.md` | pièges rencontrés dans les jeux | non (lu au besoin) |
 | `profils/` | une fiche par famille de rendu | non (lue au démarrage) |
@@ -48,6 +50,21 @@ rien importer de ce dépôt-là, ne pas y renvoyer.
 - La liste des modules et des outils est écrite en dur dans
   `templates/sync-game-system.sh` : un nouveau module s'y ajoute, sinon les
   jeux ne le reçoivent jamais.
+- **La page d'accueil lit les fichiers, elle ne les recopie pas.** Elle
+  dépend de leur format :
+  - `templates/PROMPT-NOUVEAU-JEU.md` : le texte après la première ligne
+    `---`, les marques `[Nom du jeu]`, `supershivas/[repo]`, le pitch entre
+    crochets et la ligne « Avant d'écrire du code : » (où elle insère
+    inspirations et décisions déjà prises) ;
+  - `GENRES.md` : sections `## 1.` à `## 5.`, familles en `### X. Titre`,
+    le nom en première colonne des tableaux ;
+  - `INSPIRATION.md` : `## section`, `### sous-section`, et des entrées
+    `- **Nom** (repère) — ce qu'on peut en prendre.`
+  Après un changement de l'un d'eux, ou d'une question du prompt (les
+  décisions du formulaire sont dans `site/accueil.js`, `decisionsDe`), ouvrir
+  la page en local (`node outils/captures.mjs`) et relire le prompt généré.
+- La liste des fichiers lisibles sur la page est écrite en dur dans
+  `site/accueil.js` (`DOCS`) : un nouveau fichier s'y ajoute.
 - `DESIGN-SYSTEM.md` reste un chantier ouvert : ne pas y figer de valeurs
   sans l'accord de Jérôme.
 

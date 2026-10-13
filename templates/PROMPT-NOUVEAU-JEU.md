@@ -19,7 +19,7 @@ Avant d'écrire du code :
    git clone --depth 1 https://github.com/supershivas/game-system /tmp/game-system
    ```
    Lis `/tmp/game-system/CONVENTIONS.md` (elles s'appliquent à ce jeu ; suis
-   leur section 25 « Nouveau jeu »), `GENRES.md`, `LECONS.md` et
+   leur section 25 « Nouveau jeu »), `GENRES.md`, `INSPIRATION.md`, `LECONS.md` et
    `DESIGN-SYSTEM.md` (il est encore à définir : n'invente pas de règle
    commune, choisis seulement ce qui est propre à ce jeu).
 
@@ -46,6 +46,9 @@ Avant d'écrire du code :
    - **Forme d'une session** : partie courte qui recommence (avec ou sans
      progression permanente), partie longue continue, niveaux, quotidien,
      sans fin.
+   - Si le pitch ne cite aucune référence, propose en plus 3 croisements
+     tirés de `INSPIRATION.md` (une période ou un lieu, une œuvre pour
+     l'image, un jeu pour la mécanique), en sélection multiple.
 
    **Tour 2 — l'image et le son**
    - **Rendu** : pixel 2D en canvas maison, pixel 2D avec Phaser, 3D

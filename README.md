@@ -1,5 +1,9 @@
 # game-system
 
+**Page d'accueil : https://supershivas.github.io/game-system/** — le
+formulaire qui écrit le prompt d'un nouveau jeu, l'inspiration à piocher,
+et tous les fichiers du dépôt à lire.
+
 La source de vérité commune aux **jeux** Supershivas : jeux en solo, joués
 dans le navigateur, et qu'on doit pouvoir porter sur Steam plus tard.
 Ce dépôt ne dépend pas de `design-system`, qui ne sert qu'aux apps.
@@ -22,6 +26,9 @@ On y trouve :
    un jeu de départ jouable, le labo et l'atelier, les agents, commandes et
    skills Claude Code, le workflow GitHub Pages.
 5. **La mémoire** :
+   - `INSPIRATION.md` : jeux, périodes historiques, personnages, œuvres
+     d'art (peinture, estampe, BD, cinéma, littérature, musique) et
+     contraintes de style où puiser, avec ce qu'on peut prendre de chacun ;
    - `LECONS.md` : les pièges déjà rencontrés dans les jeux ;
    - `GENRES.md` : le catalogue des genres, vues, rendus et publics ;
    - `profils/` : une fiche technique par famille de rendu.
@@ -32,6 +39,8 @@ On y trouve :
 ## Arborescence
 
 ```
+index.html  site/         la page d'accueil (GitHub Pages, racine de main)
+INSPIRATION.md          où puiser : jeux, périodes, personnages, œuvres
 CONVENTIONS.md          les règles des jeux (copiées dans chaque jeu)
 DESIGN-SYSTEM.md        le design system des jeux — à définir
 GENRES.md               genres, vues, rendus, publics, formes de session
@@ -89,10 +98,11 @@ faudrait reprendre dans chacun.
 ## Créer un nouveau jeu
 
 1. Crée le repo (vide) sur GitHub.
-2. Ouvre une session Claude Code dans ce repo et colle
-   `templates/PROMPT-NOUVEAU-JEU.md`, après avoir rempli le nom, le repo et le
-   pitch.
-3. Claude Code te pose une quinzaine de questions à choix multiples (genre,
+2. Remplis le formulaire de la page d'accueil (nom, pitch, inspirations, et
+   les décisions déjà prises), copie le prompt, ouvre une session Claude Code
+   dans ce repo et colle-le. Sans la page : `templates/PROMPT-NOUVEAU-JEU.md`
+   à remplir à la main.
+3. Claude Code te pose les questions restantes à choix multiples (genre,
    vue, rendu, palette, commandes, sauvegarde, labo, atelier, outils,
    agents, Steam…), puis il installe tout et construit le **lot minimal**.
 
