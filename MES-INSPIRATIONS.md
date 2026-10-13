@@ -1,7 +1,7 @@
 # Mes inspirations
 
 Ce qui me nourrit, à moi, en dehors de la culture générale d'`INSPIRATION.md`.
-Tiré de mes notes (Idée, export du 13 octobre 2026), rangé pour rester court.
+Tiré de mes notes (Idée, deux exports du 13 octobre 2026), rangé pour rester court.
 
 **Trois étages, pour que la liste ne devienne pas infinie :**
 
@@ -22,7 +22,7 @@ peut passer en réserve. Format (la page d'accueil en dépend) :
 
 ## Le noyau
 
-- **La danse macabre** (fresques médiévales, *Le Triomphe de la Mort*, *Dit des trois morts et des trois vifs*) — la mort qui mène la ronde et rend tout le monde égal ; un cortège comme structure de jeu, le memento mori comme ton.
+- **La danse macabre** (fresques médiévales, *Le Triomphe de la Mort* de León à Bruegel, Otto Dix et Nussbaum, *Dit des trois morts et des trois vifs*, Baudelaire, Louis Moe) — la mort qui mène la ronde et rend tout le monde égal ; un cortège comme structure de jeu, le memento mori comme ton. La décadence, elle, danse après la mort de Dieu : plus d'au-delà, seulement l'ivresse.
 - **Les Névroses de Maurice Rollinat** (1883) — la poésie noire fin de siècle ; « le silence est l'âme des choses qui veulent garder leur secret » comme règle de mise en scène.
 - **Enfonce-toi dans la ville** (Noir Boy George, 2014) — la dérive nocturne : au bout d'une rue noire, une rue plus noire encore. Une boucle de jeu qui descend.
 - **Évariste Galois** (1811-1832) — la nuit avant le duel, tout écrire avant l'aube : un jeu à compte à rebours, une seule nuit, une œuvre à sauver.
@@ -32,8 +32,8 @@ peut passer en réserve. Format (la page d'accueil en dépend) :
 - **Les hétéronymes de Fernando Pessoa** — un auteur, plusieurs poètes avec leur vie et leur style : un jeu où l'on change de personnage, et donc de règles et de regard.
 - **Jan Švankmajer** (*Alice*, *Faust*) — les objets du quotidien qui s'animent, la matière qui dérange (argile, viande, poussière) ; le surréalisme tactile.
 - **Le tokamak** (mes notes) — le vide au centre autour duquel on tourne, le plasma tenu par des forces invisibles, la fusion rare et fragile : une métaphore de système de jeu (tenir l'équilibre, ne jamais toucher le centre).
-- **Ne retourne pas là où tu as été heureux** (citation attribuée à Robert De Niro) — le retour sur un lieu aimé qui a changé ; le piège de la mélancolie comme ressort de récit.
-- **Le lexique rare** (mes listes de mots) — porphyre, protogyne, céruléen, viride, syzygie, murmuration, cyclopéen, sépulcral : des noms à inventer qui sonnent juste, sans prendre de nom réel.
+- **Ne retourne pas là où tu as été heureux** (citation attribuée à Robert De Niro ; Élise Costa : revenir dans une ville où l'on a vécu est un anachronisme) — le retour sur un lieu aimé qui a changé ; le piège de la mélancolie comme ressort de récit.
+- **Le lexique rare** (mes listes de mots) — porphyre, protogyne, céruléen, viride, syzygie, murmuration, cyclopéen, sépulcral, préternaturel, hapax : des noms à inventer qui sonnent juste, sans prendre de nom réel.
 
 ## Les fils
 
@@ -42,13 +42,22 @@ peut passer en réserve. Format (la page d'accueil en dépend) :
 - **Contes d'un buveur d'éther** (Jean Lorrain) — perceptions déformées, ports brumeux, salons décadents ; un rendu qui se dérègle avec l'état du héros.
 - **Là-bas** (Joris-Karl Huysmans) — l'écrivain qui s'ennuie et tombe dans l'histoire de Gilles de Rais ; le sonneur de cloches qui chasse les esprits.
 - **Les Nuits d'Edward Young** (1742-1745) — une méditation en plusieurs nuits : un chapitre par nuit, la nuit comme unité de jeu.
-- **Félicien Rops** — la gravure sulfureuse, le noir et blanc moqueur.
+- **Félicien Rops** (*Satan semant des graines*, *La Buveuse d'absinthe*, *La Mort qui danse*) — la gravure sulfureuse, le noir et blanc moqueur.
 - **Egon Schiele** (*La Jeune Fille et la Mort*) — le trait anguleux, les corps tordus, l'étreinte au bord de la fin.
 - **Felix Nussbaum** (*Le Triomphe de la mort*) — la danse macabre peinte au bord de la catastrophe réelle ; la gravité qu'on ne joue pas à la légère.
 - **Le Spleen de Baudelaire** — le ciel bas comme un couvercle : une lumière, une hauteur de plafond.
 - **Le Feu follet** (Drieu la Rochelle) — deux jours, une chambre d'objets fétiches, un dernier tour de ses amis ; un jeu court et fermé.
 - **Le comportement ordalique** — jouer avec la mort pour se sentir vivant ; roulette russe, risque choisi : une mécanique de pari.
 - **Saturne** — le « bonheur d'être triste », les saturnales ; la mélancolie comme humeur de jeu.
+- **Les Cavaliers de l'Apocalypse** (Dürer, 1498) — quatre cavaliers, quatre couleurs, quatre attributs (arc, épée, balance, faux) : un système de quatre fléaux lisible d'un coup d'œil.
+- **La Tentation de saint Antoine** (Bosch, Rops) — l'ermite dans le désert assailli de visions : un héros immobile et un monde qui l'attaque.
+- **Memento mori et les vanités** (natures mortes du XVIIe siècle ; l'esclave qui murmure au général triomphant) — crâne, sablier, bougie : une voix qui rappelle la fin au moment de la victoire.
+- **Astarté** (vue par Jean Lorrain) — la déesse de l'amour et de la guerre, de la fécondité et de la mort, réunies en une figure.
+- **James Ensor** (squelettes qui se disputent un hareng) — le macabre carnavalesque, les masques et les crânes qui rient.
+- **Nuda Veritas** (Klimt, 1899) — la vérité nue qui tend un miroir ; « plais à peu de gens, plaire à beaucoup est dangereux » comme ligne de conduite.
+- **La Buveuse d'absinthe** (Léon Spilliaert) — la silhouette noire et le vide autour ; la solitude en aplat.
+- **Les sorcières de Bénévent** (Vincent Proce, *De Nuce Maga*) — le noyer où se réunissaient les sorcières : un arbre-porte vers les enfers.
+- **Le joueur de flûte, figure de la Mort** (Hamelin, 1284) [servi : Pierre et les rats] — les enfants disparus, la danse de Saint-Guy : le musicien qui vient toujours se faire payer.
 
 ### La ville la nuit
 
@@ -75,6 +84,8 @@ peut passer en réserve. Format (la page d'accueil en dépend) :
 - **Le château d'oubli** (Oblivion, la forteresse de l'Oubli) — un lieu qui efface ce qu'on y apporte.
 - **La synchronicité** — les coïncidences qui ont du sens : un monde qui répond au joueur.
 - **Les Ailes folles** (Dubus) — vouloir « du Ciel, toujours du Ciel », retomber, repartir quand même : la boucle du roguelite.
+- **Marc-Antoine Mathieu** (et ses maîtres : Borges, Kafka, Cortázar) — la bande dessinée qui joue avec la case et la page ; le monde comme construction paradoxale, ou comme perception qui se fissure.
+- **Maurizio Cattelan** — l'œuvre-canular, la provocation sérieuse : un objet qui ment sur ce qu'il est.
 
 ### Montagnes, eaux et lumières
 
@@ -82,17 +93,21 @@ peut passer en réserve. Format (la page d'accueil en dépend) :
 - **Au bout de chaque rue, une montagne** (Stendhal, à propos de Grenoble) — la ville fermée par la montagne ; une composition d'écran.
 - **Aquilon** — le vent du nord, froid et violent : une météo personnage.
 - **Apollon et Daphné** (Le Bernin) — la métamorphose saisie en plein mouvement, la fuite qui devient arbre.
+- **Le tigre bleu de l'Euphrate** (Alexandre le Grand à l'aube) — suivre un animal de pierres précieuses à travers un gué, et renoncer à conquérir pour découvrir : un guide qui fuit devant le joueur.
+- **Lāhainā Noon** (Hawaï) — le midi où le soleil est au zénith et où rien n'a d'ombre : un instant rare qui change les règles de la lumière.
+- **Le cachalot** — une dent d'un kilo, le chant des baleines : la grande bête qu'on entend avant de la voir.
 
 ### L'affiche et le trait
 
 - **Milton Glaser** — « oui, non, et wow » ; viser le wow. Le pictogramme qui devient une icône.
-- **Paul Rand** — le logo comme jeu de formes simples.
+- **Paul Rand** (le logo NeXT) — le logo comme jeu de formes simples.
 - **Francis Masse** — la BD absurde et savante, la science détournée.
 - **Dominique Goblet** (*Faire semblant c'est mentir*) — la BD qui mélange les techniques et les temps.
 - **Olivier Schrauwen** (*Mon fiston*) — le rêve de bande dessinée ancienne, la couleur étrange.
 - **Éric Lambé** (*Paysage après la bataille*) — le silence dessiné, le paysage du deuil.
 - **Martin Parr** — la couleur saturée, le banal rendu grotesque.
 - **Martin Margiela** — le vêtement déconstruit, l'étiquette blanche, l'anonymat.
+- **David Hockney** (*A Bigger Splash*, 1967) — aplats, piscine, éclaboussure figée : le pixel art californien avant l'heure.
 
 ### L'immensité
 
@@ -102,6 +117,12 @@ peut passer en réserve. Format (la page d'accueil en dépend) :
 - **Jean-Philippe Jaworski** — la fantasy à la langue riche, les récits de reîtres.
 - **La syzygie** — trois astres alignés : un événement rare qui ouvre une porte, une fenêtre de jeu.
 - **L'entropie** — l'univers qui tend au désordre : un monde qui se défait si on ne l'entretient pas.
+- **L'horreur cosmique** (Lovecraft, *weird fiction*) — ce qui est trop grand pour être compris ; la peur de l'échelle.
+- **Les échelles de Kardachev et de Barrow** — classer les civilisations par l'énergie qu'elles maîtrisent (planète, étoile, galaxie) ou par la petitesse de ce qu'elles manipulent (atome, noyau, espace-temps) : un arbre de progression tout fait.
+- **L'essaim de Dyson** — des millions d'objets autour d'une étoile plutôt qu'une coque : la construction par accumulation.
+- **Némésis** (Sol B) — l'étoile sombre jamais vue, compagne supposée du Soleil : l'ennemi qu'on soupçonne sans jamais le voir.
+- **La météo de Jupiter** (pluie d'hélium, cyclones en octogone, grêlons d'ammoniac, Grande Tache Rouge) — une météo extraterrestre à recopier telle quelle.
+- **John Brosio** (*Dinosaurs Eating the CEO*) — la catastrophe gigantesque peinte avec calme dans le paysage ordinaire.
 
 ### Métamorphoses et matières
 
@@ -111,14 +132,39 @@ peut passer en réserve. Format (la page d'accueil en dépend) :
 - **Les céphalophores** — les saints qui portent leur propre tête : l'étrange sacré médiéval.
 - **Les matières précieuses** (musc, santal, ambre, myrrhe, onyx, porphyre, ivoire, mousseline, chaux) — des noms de ressources, de pièces, de lieux.
 - **Les couleurs rares** (céruléen, viride, rubescent, flavescent, nigrescent, albescent, purpurin, opalin) — nommer une palette.
+- **Les états de la matière** (plasma, superfluide, condensat de Bose-Einstein, matière dégénérée, cristaux temporels) — des états rares comme objets ou pouvoirs : un liquide qui grimpe les parois, une horloge qui tourne sans énergie.
+- **Le parasitoïde** — l'hôte qui nourrit ce qui le tuera (l'Alien est un endoparasitoïde) : une créature, une mécanique d'infestation.
+- **Le feu follet** (le phénomène) — les gaz des marais qui s'enflamment seuls : la lumière qui égare le voyageur.
+- **L'organoïde** — un organe miniature cultivé ; des neurones humains qui jouent à Doom : la frontière du vivant et de la machine.
 
-### Liberté et servitude
+### Pouvoir, foule et servitude
 
-- **Le Discours de la servitude volontaire** (Étienne de La Boétie, vers 1548) — le pouvoir ne tient que par le consentement : un jeu où l'on cesse d'obéir.
+- **Le Discours de la servitude volontaire** (Étienne de La Boétie, vers 1548, écrit à dix-huit ans) — le pouvoir ne tient que par le consentement : un jeu où l'on cesse d'obéir.
 - **Frantz Fanon** — l'aliénation produite par la domination ; les masques imposés.
 - **La boîte de Skinner** — le conditionnement par la récompense : ce que le jeu doit refuser (le joueur n'est pas un rat à levier).
 - **Brûler ses vaisseaux** — supprimer le retour pour s'obliger à avancer : une mécanique de non-retour.
 - **Sainte Rita** — la sainte des causes désespérées.
+- **Les frères de Witt** (La Haye, 1672) — l'homme d'État devenu bouc émissaire, la foule qui force la prison : la foule comme personnage, et sa cruauté.
+- **Théodore de Neuhoff** (roi de Corse, 1736) — l'aventurier élu roi contre des armes promises ; un royaume de quelques mois bâti sur du bluff : un jeu de gestion sans les moyens de ses ambitions.
+- **Toussaint Louverture** — l'esclave qui savait lire, frappé pour cela : le savoir comme arme.
+- **Le massacre de la rue Transnonain** (1834, Daumier) — une maison, une nuit, une gravure qui accuse.
+- **Les hommes de la Révolution** (Robespierre, Marat, Desmoulins) — trois voix, trois publics : le peuple, la bourgeoisie éclairée, l'incorruptible.
+- **Jésuites contre jansénistes** (XVIIe siècle) — la grâce contre le libre arbitre, le monde contre le retrait : deux factions aux règles opposées.
+- **Les Horaces et les Curiaces** — trois contre trois, et la fuite feinte pour séparer les poursuivants : une tactique jouable.
+- **Les empereurs romains** (Auguste, Caligula, Néron, Trajan, Hadrien, Marc Aurèle, Commode, Dioclétien, Constantin ; Caracalla né à Lyon) — une galerie de règnes, chacun un archétype : fondateur, fou, bâtisseur, philosophe, gladiateur.
+- **Les calendriers anciens** (années des consuls, *ab Urbe condita*, olympiades, indictions) — dater par les règnes : un calendrier inventé donne de la profondeur à un monde.
+
+### Machines à penser
+
+- **Le dilemme du prisonnier** — se taire ou trahir, et l'équilibre de Nash qui fait perdre les deux : une mécanique à deux joueurs, ou entre le joueur et un personnage.
+- **Le point de Schelling** — se retrouver sans se parler, en choisissant ce que l'autre choisira : un jeu de coordination muette.
+- **Les expériences de pensée** (bateau de Thésée, chambre chinoise, hôtel de Hilbert, Bibliothèque de Babel, démon de Maxwell, chat de Schrödinger, dîner des philosophes) — chacune est un niveau tout prêt : une règle étrange, poussée au bout.
+- **Le basilic de Roko** — l'information dangereuse à connaître : savoir rend coupable.
+- **L'hypothèse de la simulation** (Nick Bostrom ; Tom Campbell) — le monde du jeu qui se sait simulé, ou la conscience comme fondement : un récit qui retourne le cadre.
+- **Le coup 37** (AlphaGo contre Lee Sedol, 2016) — le coup qu'aucun humain n'aurait joué : une IA ennemie qui surprend vraiment.
+- **La théorie du chaos** — l'effet papillon : une petite différence de départ, deux parties qui divergent (le hasard à graine le permet).
+- **La loi de Benford** — un tiers des nombres réels commencent par 1 : des chiffres générés qui paraissent vrais.
+- **Les structures de récit** (Campbell et le monomythe, Aristote, Syd Field, McKee, Truby, les sept intrigues de Booker) — des gabarits pour le récit d'un jeu, à prendre et à tordre.
 
 ## La réserve
 
@@ -132,6 +178,12 @@ peut passer en réserve. Format (la page d'accueil en dépend) :
 - **Chloé Delaume** — l'autofiction comme reconstruction.
 - **Ayn Rand** — l'individualisme héroïque, à contre-pied.
 - **Damien Jalet** — la chorégraphie des corps en masse.
+- **La guerre de Troie en douze épisodes** (du jugement de Pâris à l'Énéide) — un découpage en douze chapitres, à voler pour un jeu en épisodes.
+- **La bataille de Long Tan** (Viêt Nam, 1966) — une compagnie dans une plantation d'hévéas, sous la pluie.
+- **Saint-Saëns et *Les Dents de la mer*** — deux notes à un demi-ton, répétées : la tension par l'ostinato.
+- **Tomáš Moravec** (*Palet*, Bratislava) — la sculpture qui détourne l'espace public.
+- **Le siège du méchant** (photo de brocante) — un objet trouvé qui raconte un personnage.
+- **Michel Feher** — philosophe, à lire.
 - **Le Vierling** — un fusil à quatre canons : un objet rare.
 - **Solarpunk et seapunk** — des futurs lumineux, à l'opposé du reste.
 - **Les citations** (Marc Aurèle, Cioran, Prevel, Hugo, Clemenceau, Pascal, le Carré, Billy Wilder) — « le chat assis sur le tapis d'un autre chat » : une situation, pas une description.

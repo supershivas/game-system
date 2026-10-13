@@ -203,3 +203,4 @@ input:focus-visible, textarea:focus-visible, select:focus-visible, .bouton:focus
 .repli[open] > summary::before { transform: rotate(90deg); }
 .repli .nb { margin-left: auto; font-weight: 400; font-size: 13px; color: var(--doux); }
 .repli > .liste-inspi, .repli > .carte-inspi { padding: 0 10px 10px; }
+.item-inspi .servi { display: inline-block; margin: 2px 0 4px; padding: 0 6px; font-size: 12px; border: 1px solid var(--trait); border-radius: 10px; color: var(--doux); }

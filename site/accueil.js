@@ -186,10 +186,11 @@ function parseInspiration(md, perso = false) {
   for (const l of md.split('\n')) {
     if (l.startsWith('## ')) { section = l.slice(3).trim(); sous = ''; continue; }
     if (l.startsWith('### ')) { sous = l.slice(4).trim(); continue; }
-    const m = l.match(/^- \*\*(.+?)\*\*\s*(?:\(([^)]*)\))?\s*(?:—\s*(.*))?$/);
+    // - **Nom** (repère) [servi : Jeu] — ce qu'on en prend.   (repère et servi facultatifs)
+    const m = l.match(/^- \*\*(.+?)\*\*\s*(?:\(([^)]*)\))?\s*(?:\[\s*servi\s*:\s*([^\]]*)\])?\s*(?:—\s*(.*))?$/);
     if (!m || !section || section.startsWith('Comment')) continue;
     const etage = !perso ? 'general' : section.startsWith('Le noyau') ? 'noyau' : section.startsWith('La réserve') ? 'reserve' : 'fil';
-    items.push({ perso, etage, section, sous, nom: m[1], repere: net(m[2]), desc: net(m[3]) });
+    items.push({ perso, etage, section, sous, nom: m[1], repere: net(m[2]), servi: (m[3] || '').trim(), desc: net(m[4]) });
   }
   return items;
 }
@@ -332,7 +333,7 @@ function generer() {
     const details = etat.inspirations.map(n => {
       const it = INSPI.find(x => x.nom === n);
       if (!it) return `- **${n}**`;
-      return `- **${n}**${it.repere ? ` (${it.repere})` : ''} — ${it.desc}${it.perso ? ' *(à moi)*' : ''}`;
+      return `- **${n}**${it.repere ? ` (${it.repere})` : ''} — ${it.desc}${it.servi ? ` (déjà servi : ${it.servi})` : ''}${it.perso ? ' *(à moi)*' : ''}`;
     });
     ajouts.push(`Inspirations (game-system : \`MES-INSPIRATIONS.md\` pour celles marquées « à moi », \`INSPIRATION.md\` pour les autres ; on prend l'air, on invente les noms) :\n${details.join('\n')}`);
   }
@@ -396,7 +397,8 @@ function rendreInspiration() {
   const carte = it => el('button', {
     type: 'button', class: `item-inspi${choisis.has(it.nom) ? ' choisie' : ''}`, 'aria-pressed': String(choisis.has(it.nom)),
     onclick: () => basculerInspiration(it.nom),
-  }, el('b', {}, it.nom, it.repere ? el('span', { class: 'repere' }, ` (${it.repere})`) : null), el('span', { class: 'desc' }, it.desc));
+  }, el('b', {}, it.nom, it.repere ? el('span', { class: 'repere' }, ` (${it.repere})`) : null),
+    it.servi ? el('span', { class: 'servi' }, `servi : ${it.servi}`) : null, el('span', { class: 'desc' }, it.desc));
   const liste = items => el('div', { class: 'liste-inspi' }, items.map(carte));
   // Un bloc replié : ouvert s'il l'était, ou dès qu'on filtre
   const repli = (cle, titre, items, contenu) => {

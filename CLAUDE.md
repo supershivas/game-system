@@ -61,7 +61,8 @@ rien importer de ce dépôt-là, ne pas y renvoyer.
     le nom en première colonne des tableaux ;
   - `INSPIRATION.md` : `## section`, `### sous-section`, et des entrées
     `- **Nom** (repère) — ce qu'on peut en prendre.`
-  - `MES-INSPIRATIONS.md` : même format d'entrée, sous `## Le noyau`,
+  - `MES-INSPIRATIONS.md` : même format d'entrée (avec, facultatif, `[servi : Jeu]`
+    entre le repère et le tiret), sous `## Le noyau`,
     `## Les fils` (un `### fil` par thème) et `## La réserve`. Ses
     plafonds sont la règle du fichier : 12 entrées au noyau, 10 fils ; pour
     en ajouter, proposer à Jérôme ce qui sort ou passe en réserve. Il ne
