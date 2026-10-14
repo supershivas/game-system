@@ -28,7 +28,7 @@ peut passer en réserve. Format (la page d'accueil en dépend) :
 - **Évariste Galois** (1811-1832) — la nuit avant le duel, tout écrire avant l'aube : un jeu à compte à rebours, une seule nuit, une œuvre à sauver.
 - **Le Labyrinthe de Borges** — le labyrinthe construit contre le désert, l'ultime labyrinthe sans murs ; le vide plus perdant que la complexité.
 - **Nicolas Roerich** (1874-1947) — les montagnes en aplats de couleurs franches, le sacré dans le minéral ; une palette.
-- **Saul Bass** (génériques, affiches) — formes découpées, deux ou trois couleurs, une silhouette qui dit tout ; l'écran titre et l'interface.
+- **Les expériences de pensée** (bateau de Thésée, chambre chinoise, hôtel de Hilbert, Bibliothèque de Babel, démon de Maxwell, chat de Schrödinger, dîner des philosophes) — chacune est un niveau tout prêt : une règle étrange, poussée au bout.
 - **Les hétéronymes de Fernando Pessoa** — un auteur, plusieurs poètes avec leur vie et leur style : un jeu où l'on change de personnage, et donc de règles et de regard.
 - **Jan Švankmajer** (*Alice*, *Faust*) — les objets du quotidien qui s'animent, la matière qui dérange (argile, viande, poussière) ; le surréalisme tactile.
 - **Le tokamak** (mes notes) — le vide au centre autour duquel on tourne, le plasma tenu par des forces invisibles, la fusion rare et fragile : une métaphore de système de jeu (tenir l'équilibre, ne jamais toucher le centre).
@@ -99,6 +99,7 @@ peut passer en réserve. Format (la page d'accueil en dépend) :
 
 ### L'affiche et le trait
 
+- **Saul Bass** (génériques, affiches) — formes découpées, deux ou trois couleurs, une silhouette qui dit tout ; l'écran titre et l'interface.
 - **Milton Glaser** — « oui, non, et wow » ; viser le wow. Le pictogramme qui devient une icône.
 - **Paul Rand** (le logo NeXT) — le logo comme jeu de formes simples.
 - **Francis Masse** — la BD absurde et savante, la science détournée.
@@ -158,7 +159,6 @@ peut passer en réserve. Format (la page d'accueil en dépend) :
 
 - **Le dilemme du prisonnier** — se taire ou trahir, et l'équilibre de Nash qui fait perdre les deux : une mécanique à deux joueurs, ou entre le joueur et un personnage.
 - **Le point de Schelling** — se retrouver sans se parler, en choisissant ce que l'autre choisira : un jeu de coordination muette.
-- **Les expériences de pensée** (bateau de Thésée, chambre chinoise, hôtel de Hilbert, Bibliothèque de Babel, démon de Maxwell, chat de Schrödinger, dîner des philosophes) — chacune est un niveau tout prêt : une règle étrange, poussée au bout.
 - **Le basilic de Roko** — l'information dangereuse à connaître : savoir rend coupable.
 - **L'hypothèse de la simulation** (Nick Bostrom ; Tom Campbell) — le monde du jeu qui se sait simulé, ou la conscience comme fondement : un récit qui retourne le cadre.
 - **Le coup 37** (AlphaGo contre Lee Sedol, 2016) — le coup qu'aucun humain n'aurait joué : une IA ennemie qui surprend vraiment.
