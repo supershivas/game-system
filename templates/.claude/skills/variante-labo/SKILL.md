@@ -19,6 +19,11 @@ contenu du jeu (c'est l'atelier).
    dessinera. Pas de copie du code du jeu dans le labo.
 3. Données d'exemple en dur ; le labo ne lit ni n'écrit la sauvegarde.
 4. Une animation rend une fonction de nettoyage (arrêter la boucle).
+   Une variante qui montre **un moment qui se déroule** (assaut, journée, sort,
+   animation en plusieurs temps) se pilote avec `js/lib/labo-timeline.js` :
+   `mountTimeline(stage, { duree, etapes, onTime })` pose en bas une frise
+   (jouer, pause, curseur, saut d'étape en étape, vitesse) ; le dessin est une
+   fonction pure du temps `t`, pour qu'on puisse aller à n'importe quel instant.
 5. Vérifie : `node outils/captures.mjs --page labo.html`, et donne l'adresse
    avec l'ancre (`labo.html#sujet-B`).
 

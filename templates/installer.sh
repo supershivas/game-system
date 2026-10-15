@@ -75,7 +75,7 @@ esac
 
 # Sans labo / sans atelier : retirer les pages et leurs liens
 if [ $LABO = 0 ]; then
-  rm -f labo.html favicon-labo.svg js/labo.js js/lib/labo-shell.js js/lib/labo-shell.css
+  rm -f labo.html favicon-labo.svg js/labo.js js/lib/labo-shell.js js/lib/labo-shell.css js/lib/labo-timeline.js
   sed -i 's#<a href="labo.html">Labo</a> · ##; s# · <a href="atelier.html">Atelier</a>##' index.html
   sed -i '/href="labo.html"/,/<\/a>/d' atelier.html 2>/dev/null || true
 fi

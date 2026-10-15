@@ -62,6 +62,7 @@ modules/                → js/lib/ des jeux
   i18n.js                 langues
   game.css                base CSS (100dvh, aucun geste au navigateur…)
   labo-shell.js/.css      la coquille du Labo (une variante à la fois)
+  labo-timeline.js        la frise du temps du Labo (jouer, pause, glisser, sauter d'étape en étape)
   pixel-editor.js         l'éditeur de pixels de l'Atelier
   gh-publish.js           publication de l'Atelier en un commit
   tests/                  tests des modules (node outils/test-run.mjs modules/tests)
