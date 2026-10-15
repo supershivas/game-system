@@ -69,7 +69,7 @@ const h = (tag, attrs = {}, ...kids) => {
   return e;
 };
 const svg = d => { const s = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); s.setAttribute('viewBox', '0 0 24 24'); s.setAttribute('aria-hidden', 'true'); const p = document.createElementNS('http://www.w3.org/2000/svg', 'path'); p.setAttribute('d', d); s.append(p); return s; };
-const ICONES = { jouer: 'M7 4v16l13-8z', pause: 'M8 5v14M16 5v14', prec: 'M18 5v14M16 12L6 5v14z', suiv: 'M6 5v14M8 12l10-7v14z' };
+const ICONES = { jouer: 'M7 4v16l13-8z', pause: 'M8 5v14M16 5v14', prec: 'M6 5v14M8 12l10-7v14z', suiv: 'M18 5v14M16 12L6 5v14z' };
 const fmt = s => s.toFixed(1).replace('.', ',') + ' s';
 
 export function mountTimeline(conteneur, { duree, etapes = [], onTime = () => {}, boucle = true, vitesse = 1, lecture = true } = {}) {
