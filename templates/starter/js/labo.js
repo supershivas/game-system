@@ -3,6 +3,8 @@
 // ce que le jeu dessinera. Ajouter un sujet ou une variante = ajouter une
 // entrée dans GROUPES.
 import { mountLabo } from './lib/labo-shell.js';
+import { loadVersion } from './lib/app-update.js';
+import { JOURNAL } from './labo-journal.js';
 import { spriteCanvas, sheet, spriteToPNG, paletteToGPL, paletteToHex } from './lib/sprites.js';
 import { createAudio } from './lib/audio.js';
 import { PALETTE, ROLES } from './palette.js';
@@ -14,6 +16,7 @@ document.documentElement.style.setProperty('--jeu-accent', ROLES.accent);
 const NOM = document.title.replace(/^Labo — /, ''); // le nom vient de la page (une apostrophe ne casse rien)
 const { sprites, reglages } = await chargerContenu();
 const audio = createAudio();
+const VERSION = (await loadVersion()) || '';
 
 const el = (tag, props = {}, ...kids) => {
   const e = Object.assign(document.createElement(tag), props);
@@ -117,4 +120,7 @@ function lum(hex) {
 }
 function contraste(a, b) { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); }
 
-mountLabo(document.getElementById('labo'), { game: NOM, home: './', atelier: 'atelier.html', groups: GROUPES });
+mountLabo(document.getElementById('labo'), {
+  game: NOM, home: './', atelier: 'atelier.html', groups: GROUPES,
+  accueil: { version: VERSION, intro: 'Ce qui a changé au labo, et où le voir.', journal: JOURNAL },   // la page d'accueil du labo
+});

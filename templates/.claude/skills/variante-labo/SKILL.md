@@ -24,11 +24,27 @@ contenu du jeu (c'est l'atelier).
    `mountTimeline(stage, { duree, etapes, onTime })` pose en bas une frise
    (jouer, pause, curseur, saut d'étape en étape, vitesse) ; le dessin est une
    fonction pure du temps `t`, pour qu'on puisse aller à n'importe quel instant.
-5. Vérifie : `node outils/captures.mjs --page labo.html`, et donne l'adresse
+5. **Tiens le journal de l'accueil** : une entrée dans `js/labo-journal.js`
+   pour la version en cours (la plus récente en haut ; `items` avec `genre`
+   `nouveau` / `mis-a-jour` / `retire`, `texte`, et `ref: 'sujet-Lettre'` qui
+   mène à la variante), et `depuis: 'X.Y.Z'` sur la variante ajoutée ou
+   changée. L'accueil du labo (`#accueil`) en tire ce qui est nouveau depuis
+   la dernière visite, les sujets sans variante en jeu (« à trancher ») et
+   l'index. Un lien cassé s'y voit (⚠) : vérifie les `ref` après chaque
+   réordonnancement des variantes (les lettres changent).
+6. Vérifie : `node outils/captures.mjs --page labo.html`, et donne l'adresse
    avec l'ancre (`labo.html#sujet-B`).
 
 ## Adopter
 
 Quand Jérôme choisit : marque la variante `status: 'retenue'`, branche-la
 dans le jeu (données ou code), passe l'ancienne A en `ancienne` ou retire-la,
-et incrémente la version (le joueur voit la différence).
+remets la retenue en A (A est toujours l'actuelle ; corrige alors les `ref` du
+journal), ajoute l'entrée du journal, et incrémente la version (le joueur voit
+la différence).
+
+## Périmé
+
+Quand le jeu change et qu'une maquette du labo ne lui ressemble plus
+(interface, couleurs, règle), ne la laisse pas : refais-la, ou passe-la en
+`ancienne` avec une note qui dit depuis quelle version, et note-le au journal.
