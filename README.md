@@ -61,7 +61,7 @@ modules/                → js/lib/ des jeux
   audio.js                Web Audio : bruitages synthétisés, musique, volumes
   i18n.js                 langues
   game.css                base CSS (100dvh, aucun geste au navigateur…)
-  labo-shell.js/.css      la coquille du Labo (une variante à la fois ; page d'accueil : journal des changements, nouveautés, sujets à trancher)
+  labo-shell.js/.css      la coquille du Labo (une variante à la fois ; points d'état vert, rouge, orange ; page d'accueil : journal des changements, nouveautés, sujets à trancher)
   labo-timeline.js        la frise du temps du Labo (jouer, pause, glisser, sauter d'étape en étape)
   pixel-editor.js         l'éditeur de pixels de l'Atelier
   gh-publish.js           publication de l'Atelier en un commit
