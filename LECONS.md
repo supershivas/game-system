@@ -202,6 +202,52 @@ passe dans `CONVENTIONS.md` et reste ici avec son histoire.
 
 ---
 
+## Sessions économes
+
+Un `CLAUDE.md` de 150 ko (≈ 40 000 tokens) est relu à chaque tour. Le cache de
+prompt le facture à ~10 % du prix, donc le gain en argent est modeste ; le vrai
+gain est un contexte moins dilué, moins de compactions et moins de réécritures
+de cache quand il expire. Ce qui a marché (Cyclopéen, 152 ko → 15 ko) :
+
+1. **Découper `CLAUDE.md` par domaine, sans réécrire.** Garder à la racine
+   (~10 à 15 ko) : description, palette, échelle, commandes, stack, une ligne
+   par module, mode debug, vérifications, exceptions, ce qui a été retiré, et un
+   **index « Où lire quoi »** (tableau : fichiers touchés → fichier à lire).
+   Le reste (décisions datées, mesures, pièges et leur coût) va dans
+   `docs/domaines/<domaine>.md`, **texte inchangé**. Un piège nouveau s'écrit
+   dans le fichier de son domaine. `node outils/decouper-claude-md.mjs --liste`
+   puis `plan.json` : l'outil déplace les blocs et vérifie qu'aucune ligne ne se
+   perd. Compter une demi-heure ; le plus long est de ranger les blocs.
+2. **Un `CLAUDE.md` par dossier** (`js/rendu/CLAUDE.md` = `@../../docs/domaines/rendu.md`) :
+   chargé seulement quand on lit un fichier de ce dossier. Il ne marche que pour
+   les domaines qui ont un dossier à eux ; les autres passent par l'index.
+3. **Alléger `conventions-jeu.md`** (≈ 28 ko, importé partout) : garder le
+   « Socle » dans le fichier importé, et lire les sections de labo, d'atelier,
+   de Steam et d'agents seulement quand la tâche les touche. À faire ici
+   (`CONVENTIONS.md` est la source) : le sync copie un seul fichier, il faudrait
+   en copier deux.
+4. **Les procédures longues en skills** (changer de version et estampiller,
+   ajouter une variante au labo, réécrire les références d'empreinte, mesurer un
+   équilibrage) : une ligne de description jusqu'à l'appel, au lieu du texte
+   dans `CLAUDE.md`.
+5. **Fermer les lectures coûteuses** : `permissions.deny` sur `vendor/**`,
+   `captures/**` et les JSON d'empreinte dans `.claude/settings.json` ; lire les
+   gros fichiers par plages (`offset`/`limit`) ou avec Grep.
+6. **Sorties d'outils courtes** : un script de test qui imprime « OK » ou les
+   écarts, ou `| tail -20`. Un test verbeux relu à chaque tour coûte plus cher que
+   `CLAUDE.md`. Ne lancer que les vérifications que le changement touche
+   (les règles seules pour une règle ; l'empreinte du dessin seulement si le
+   dessin a bougé).
+7. **Hygiène de session** : une tâche par session ; les recherches larges à un
+   sous-agent d'exploration (seul le résumé revient) ; un modèle plus léger et
+   un effort réduit pour une retouche de CSS, de texte ou de version.
+8. **Moins de tours de permission** : la skill `fewer-permission-prompts` tire
+   une liste d'autorisations des transcripts.
+
+Piège de la découpe : `CLAUDE.md` n'est plus tout-en-un, donc une règle écrite
+dans le mauvais fichier est oubliée. D'où l'index en tête et la règle « avant de
+toucher à un domaine, lire son fichier ». (Cyclopéen)
+
 ## Réaligner les jeux existants
 
 Ce que chaque jeu gagnerait à reprendre de game-system (sans urgence, à faire

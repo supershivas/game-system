@@ -4,7 +4,9 @@
 
 <!-- Ce fichier ne décrit QUE le jeu actuel (section 15 des conventions).
      Ce qui a été essayé puis retiré part dans docs/archives/, avec sa raison.
-     Chaque règle porte son coût : le bug, la mesure ou la raison qui l'a fait naître. -->
+     Chaque règle porte son coût : le bug, la mesure ou la raison qui l'a fait naître.
+     Garde-le sous 20 ko : au-delà, le détail d'un domaine va dans docs/domaines/<domaine>.md
+     (outils/decouper-claude-md.mjs) et ici reste un index « Où lire quoi » (conventions, section 15). -->
 
 ## Description
 

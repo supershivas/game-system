@@ -31,7 +31,7 @@ question : tranche avec une valeur par défaut raisonnable et dis-le.
 - Boucle à pas fixe, pause sur modale ou perte de focus (9).
 - Sauvegarde automatique, versionnée, exportable (11).
 - Contenu en données, règles en code (12).
-- Bible `DESIGN.md` et `CLAUDE.md` qui ne décrivent que le jeu actuel (15).
+- Bible `DESIGN.md` et `CLAUDE.md` qui ne décrivent que le jeu actuel, court (≤ 20 ko), détail dans `docs/domaines/` (15).
 - Mode debug par l'adresse (`?debug=1`) (18).
 - Aucune ressource chargée depuis un CDN au lancement du jeu (21, 22).
 
@@ -294,6 +294,14 @@ Dès la création :
   n'existe pas n'est décrit au présent.
 - Chaque règle de `CLAUDE.md` porte **son coût** : le bug, la mesure ou la
   raison qui l'a fait naître. Sans cela, elle sera défaite dans six semaines.
+- **`CLAUDE.md` reste court** (20 ko au plus, ≈ 5 000 tokens relus à chaque tour).
+  Au-delà, le détail d'un domaine (décisions datées, mesures, pièges) passe tel
+  quel dans `docs/domaines/<domaine>.md`, et `CLAUDE.md` garde une ligne par
+  module et un index « Où lire quoi » (fichiers touchés → fichier à lire).
+  Un dossier qui a son domaine y met un `CLAUDE.md` d'une ligne
+  (`@../../docs/domaines/rendu.md`) : chargé seulement quand on y lit un fichier.
+  Un piège nouveau s'écrit dans le fichier de son domaine. Outil :
+  `node outils/decouper-claude-md.mjs` ; recette : `LECONS.md`, « Sessions économes ».
 - **`ROADMAP.md`** : les grosses évolutions envisagées ou en cours, avec leur
   statut. Une entrée sort de la roadmap une fois livrée.
 - Une décision de design que j'ai prise se note avec sa version :
