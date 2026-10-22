@@ -30,7 +30,7 @@ const MODULES = ['app-update.js', 'keys.js', 'pointer.js', 'gamepad.js', 'loop.j
 const OUTILS = ['test-run.mjs', 'captures.mjs', 'audit-ecran.mjs', 'lisibilite.mjs', 'stamp-version.mjs', 'icones.mjs', 'navigateur.mjs', 'playtest/run.mjs'];
 const DOCS = [
   ['Démarrer', ['README.md', 'templates/PROMPT-NOUVEAU-JEU.md', 'MES-INSPIRATIONS.md', 'INSPIRATION.md', 'GENRES.md']],
-  ['Règles', ['CONVENTIONS.md', 'DESIGN-SYSTEM.md', 'LECONS.md', 'CLAUDE.md']],
+  ['Règles', ['CONVENTIONS.md', 'CONVENTIONS-DETAIL.md', 'DESIGN-SYSTEM.md', 'LECONS.md', 'CLAUDE.md']],
   ['Profils de rendu', ['profils/pixel-2d-canvas.md', 'profils/pixel-2d-phaser.md', 'profils/pixel-3d-three.md', 'profils/dom-cartes.md', 'profils/vectoriel.md']],
   ['Modèles', ['templates/CLAUDE.jeu.md', 'templates/DESIGN.md', 'templates/ROADMAP.md', 'templates/installer.sh', 'templates/sync-game-system.sh', 'templates/pages.yml']],
   ['Agents', AGENTS.map(a => `templates/.claude/agents/${a}.md`)],

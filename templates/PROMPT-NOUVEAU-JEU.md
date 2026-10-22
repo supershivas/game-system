@@ -18,7 +18,7 @@ Avant d'écrire du code :
    ```
    git clone --depth 1 https://github.com/supershivas/game-system /tmp/game-system
    ```
-   Lis `/tmp/game-system/CONVENTIONS.md` (elles s'appliquent à ce jeu ; suis
+   Lis `/tmp/game-system/CONVENTIONS.md` et `/tmp/game-system/CONVENTIONS-DETAIL.md` (elles s'appliquent à ce jeu ; suis
    leur section 25 « Nouveau jeu »), `GENRES.md`, `INSPIRATION.md`, le noyau de
    `MES-INSPIRATIONS.md` (mes inspirations à moi), `LECONS.md` et
    `DESIGN-SYSTEM.md` (il est encore à définir : n'invente pas de règle

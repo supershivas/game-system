@@ -44,7 +44,8 @@ On y trouve :
 index.html  site/         la page d'accueil (GitHub Pages, racine de main)
 INSPIRATION.md          où puiser : jeux, périodes, personnages, œuvres
 MES-INSPIRATIONS.md     mes inspirations : noyau, fils, réserve
-CONVENTIONS.md          les règles des jeux (copiées dans chaque jeu)
+CONVENTIONS.md          les règles des jeux, socle (copiées dans chaque jeu)
+CONVENTIONS-DETAIL.md   les sections lues à la demande (copiées aussi)
 DESIGN-SYSTEM.md        le design system des jeux — à définir
 GENRES.md               genres, vues, rendus, publics, formes de session
 LECONS.md               les pièges déjà rencontrés, et ce qu'il faut réaligner
@@ -118,6 +119,8 @@ session Claude Code. Il télécharge depuis la branche `main` :
 
 - `CONVENTIONS.md` → `.claude/conventions-jeu.md`. La première ligne du
   `CLAUDE.md` du jeu l'importe (`@.claude/conventions-jeu.md`).
+- `CONVENTIONS-DETAIL.md` → `.claude/conventions-detail.md` : non importé, lu à la demande
+  (le tableau de `conventions-jeu.md` dit quand).
 - les fichiers de `modules/` et de `outils/`, **mais seulement ceux dont
   le jeu a déjà une copie**, et seulement dans les dossiers réservés :
   `js/lib/` (ou `src/lib/`, `lib/`) pour les modules, `outils/` pour les

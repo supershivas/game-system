@@ -8,7 +8,8 @@ rien importer de ce dépôt-là, ne pas y renvoyer.
 
 | Chemin | Rôle | Copié dans un jeu ? |
 |--------|------|---------------------|
-| `CONVENTIONS.md` | règles communes aux jeux | oui → `.claude/conventions-jeu.md` (à chaque session) |
+| `CONVENTIONS.md` | règles communes aux jeux : socle et sections de tous les jours (≈ 15 ko, importé par chaque jeu) | oui → `.claude/conventions-jeu.md` (à chaque session) |
+| `CONVENTIONS-DETAIL.md` | les sections lues à la demande (3, 5 à 8, 13, 14, 16, 17, 22, 23, 25), mêmes numéros | oui → `.claude/conventions-detail.md` (à chaque session, non importé) |
 | `DESIGN-SYSTEM.md` | design system des jeux, **à définir** | non |
 | `index.html`, `site/` | page d'accueil (GitHub Pages) : formulaire du prompt, inspiration, lecteur des fichiers | non |
 | `INSPIRATION.md` | jeux, périodes, personnages, œuvres où puiser | non (lu par la page et par le prompt) |
@@ -31,7 +32,7 @@ rien importer de ce dépôt-là, ne pas y renvoyer.
 - Chaque module est **autonome** : il n'importe aucun autre module de
   `modules/` (un jeu peut n'en adopter qu'un), aucune dépendance, aucun CDN.
   En tête de fichier : son rôle, son mode d'emploi et la règle de
-  `CONVENTIONS.md` qu'il applique.
+  `CONVENTIONS.md` ou `CONVENTIONS-DETAIL.md` qu'il applique. Une section de plus se range selon sa fréquence : tous les jours dans `CONVENTIONS.md` (≤ 15 ko), sinon dans le détail ; les numéros ne changent jamais.
 - Avant de pousser un module ou un outil :
   1. `for f in modules/*.js outils/*.mjs outils/playtest/*.mjs; do node --input-type=module --check < "$f"; done`
   2. `node outils/test-run.mjs modules/tests`

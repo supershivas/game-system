@@ -222,10 +222,11 @@ de cache quand il expire. Ce qui a marché (Cyclopéen, 152 ko → 15 ko) :
    chargé seulement quand on lit un fichier de ce dossier. Il ne marche que pour
    les domaines qui ont un dossier à eux ; les autres passent par l'index.
 3. **Alléger `conventions-jeu.md`** (≈ 28 ko, importé partout) : garder le
-   « Socle » dans le fichier importé, et lire les sections de labo, d'atelier,
-   de Steam et d'agents seulement quand la tâche les touche. À faire ici
-   (`CONVENTIONS.md` est la source) : le sync copie un seul fichier, il faudrait
-   en copier deux.
+   « Socle » et les sections de tous les jours dans le fichier importé
+   (`CONVENTIONS.md`, 28 → 15 ko), le reste dans `CONVENTIONS-DETAIL.md`
+   (copié en `.claude/conventions-detail.md`, non importé), avec un tableau
+   « quand la lire ». Les numéros de section ne changent pas. Fait ; le sync
+   copie les deux fichiers.
 4. **Les procédures longues en skills** (changer de version et estampiller,
    ajouter une variante au labo, réécrire les références d'empreinte, mesurer un
    équilibrage) : une ligne de description jusqu'à l'appel, au lieu du texte
